@@ -1,7 +1,12 @@
 [
   {
     "title": "Example Note",
-    "text": "This is a sample note for my project!",
-    "id": "0"
+    "text": "Here is an example of a note!",
+    "id": "WcgTevepv"
+  },
+  {
+    "title": "Another Example Note",
+    "text": "Here is another example of a note!",
+    "id": "7T7CbIqd3"
   }
 ]

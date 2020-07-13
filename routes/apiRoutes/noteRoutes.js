@@ -4,6 +4,7 @@ const { findById, validateNote, createNewNote } = require("../../lib/notes"); //
 const notes = require("../../db/db"); // json housing data
 const fs = require("fs");
 const path = require("path");
+const shortid = require('shortid');
 
 // GET/POST ROUTES
     // GET ROUTES
@@ -14,7 +15,7 @@ const path = require("path");
     });
     // POST ROUTES
     router.post("/notes", (req, res) => {
-        req.body.id = notes.length.toString();
+        req.body.id = shortid.generate();
         if (!validateNote(req.body)) {
             res.status(400).send("The note is not properly formatted.");
         } else {
