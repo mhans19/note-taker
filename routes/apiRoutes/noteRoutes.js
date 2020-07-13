@@ -1,35 +1,29 @@
 // DEPENDENCIES
 const router = require("express").Router(); // Express Routers
-const { filterByQuery, findById, validateNote, createNewNote } = require("../../lib/notes"); // GET/POST functions
-const { notes } = require("../../db/db"); // json housing data
+const { findById, validateNote, createNewNote } = require("../../lib/notes"); // GET/POST functions
+const db = require("../../db/db"); // json housing data
+const { fs } = require("fs");
+const notes = require("../../lib/notes");
 // GET/POST ROUTES
     // GET ROUTES
     // Filter Query GET
     router.get("/notes", (req, res) => {
-        let results = notes;
-        if (req.query) {
-            results = filterByQuery(req.query, results);
-        }
+        let results = db;
         res.json(results);
     });
-    // Filter by ID GET
-    router.get("/notes/:id", (req, res) => {
-        const result = findById(req.params.id, notes);
-        if (result) {
-            res.json(result);
-        } else {
-            res.send(404);
-        }
-    });
     // POST ROUTES
-    router.post("/notes", (req,res) => {
-        req.body.id = notes.length.toString();
+    router.post("/notes", (req, res) => {
+        req.body.id = db.length.toString();
         if (!validateNote(req.body)) {
             res.status(400).send("The note is not properly formatted.");
         } else {
-            const note = createNewNote(req.body, notes);
+            const note = createNewNote(req.body, db);
             res.json(note);
         }
     });
+    // Filter by ID to Delete object
+    // router.delete("/notes/:id", (req, res) => {
+    //     db.splice(req.params.id, 1);
+    // });
 // MODULE EXPORTS
 module.exports = router;

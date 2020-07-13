@@ -13,9 +13,10 @@
     // Serve back HTML Routes
     app.use('/api', apiRoutes);
     app.use('/', htmlRoutes);
+    app.use('/notes', htmlRoutes);
     // GET request for all file dependecies in the front-end (public) folder (e.g., css and js files)
     app.use(express.static('public'));
 // PORT
 app.listen(PORT, () => {
-    console.log('API server now on port 3001!')
+    console.log(`API server now on port ${PORT}!`)
 });
