@@ -25,20 +25,21 @@ const shortid = require('shortid');
     });
     // Filter by ID to Delete object
     router.delete("/notes/:id", (req, res) => {
+        // ID of note
         const result = findById(req.params.id, notes);
         if (result) {
           res.json(result);
         } else {
           res.send(404);
         };
-
+        // Delete based on matching IDs
         for (var i = 0; i < notes.length; i++) {
             var obj = notes[i];
             if (result.id === obj.id) {
                 notes.splice(i, 1);
             }
+        // Write back to db    
         };
-
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
             JSON.stringify(notes, null, 2)
