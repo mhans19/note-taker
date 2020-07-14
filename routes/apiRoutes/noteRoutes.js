@@ -30,9 +30,14 @@ const shortid = require('shortid');
           res.json(result);
         } else {
           res.send(404);
-        }
+        };
 
-        notes.splice(result,1);
+        for (var i = 0; i < notes.length; i++) {
+            var obj = notes[i];
+            if (result.id === obj.id) {
+                notes.splice(i, 1);
+            }
+        };
 
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
