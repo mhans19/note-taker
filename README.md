@@ -127,14 +127,14 @@ However, if interested in contributing to the application, a user *must* complet
 
 ---
 
-## **FUNCTIONALITY**
-1. From the command line interface (CLI), navigate to the local repository containing the *Index.js* file.  
-![](/assets/images/localRepo.PNG)  
-2. Once in the local repository, type *node Index.js* into the command line. Then press 'Enter'.  
-![](/assets/images/initiateNode.PNG)  
-3. From the command line, give a response to each of the questions prompted. Press 'Enter' to move to the next question. Once all the questions are answered, a validating message appears and instructs users that the newly generated HTML file is located within the 'dist' folder in the repository.  
-![](/assets/images/nodePrompts.PNG)  
-4. Navigate to the created HTML and see that all responses given from the command line have populated into the HTML template.  
-![](/assets/images/htmlPop.PNG)  
-5. Open the HTML file in a web-browser!  
-![](/assets/images/teamPage.PNG)
+## **FUNCTIONALITY**  
+1. In an internet browser, navigate to [deployed application](http://hidden-badlands-64622.herokuapp.com/).
+![](/assets/images/landingpage.PNG)  
+2. Click the 'Get Started' button to navigate to the notes page. Notice in the left-hand column of the notes page, existing notes persist.
+![](/assets/images/notepage.PNG)  
+3. Add a new note by typing a title and text to the fields in the right-hand column. Click on the pen icon in the upper right-hand corner of the screen to open a new note template.
+![](/assets/images/addnote.PNG)  
+4. Save the note by clicking the save icon in the upper right-hand side of the screen. The saved note will populate in the left-hand column. Clicking on any existing note will populate the information in the right-hand column.
+![](/assets/images/savenote.PNG)  
+5. Delete an existing note by clicking on the red trash can icon to the right of note title. The note will be deleted and the list updated (notice "Another Note" has disappeared upon deletion).
+![](/assets/images/deletenote.PNG)
